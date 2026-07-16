@@ -1,0 +1,27 @@
+# Portfolio Site
+
+Source for [sanghpriy.github.io](https://sanghpriy.github.io) — a single static page
+covering four analytics projects (optimisation, classical ML, applied GenAI, applied
+statistics + deep learning), each linking to its own GitHub repo.
+
+No build step — plain HTML/CSS, deployed directly via GitHub Pages.
+
+## Structure
+
+```
+index.html   — all page content
+style.css    — all styling
+```
+
+## Editing
+
+To add or update a project, copy an existing `<article class="project-card">` block in
+`index.html` and adjust the tag, headline result, description, tech tags, and repo link.
+Colours, type, and spacing are all controlled via CSS custom properties at the top of
+`style.css` (`:root { ... }`) if you want to restyle.
+
+## Deploying updates
+
+Since this repo is named `<username>.github.io`, GitHub Pages serves it automatically
+from the `main` branch — just commit and push, and the live site updates within a
+minute or two. No separate build or deploy step needed.
