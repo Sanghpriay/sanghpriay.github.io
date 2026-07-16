@@ -11,7 +11,7 @@
 
 <header class="site-header">
   <div class="wrap header-inner">
-    <a href="#top" class="logo">SANGHPRIAY</a>
+    <a href="#top" class="logo"><span class="status-dot" aria-hidden="true"></span>SANGHPRIAY</a>
     <nav class="site-nav">
       <a href="#projects">Projects</a>
       <a href="#about">About</a>
@@ -42,40 +42,58 @@
 
       <div class="hero-visual" aria-hidden="true">
         <svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg" class="receipt-svg">
-          <g transform="rotate(-3 200 230)">
-            <rect x="22" y="18" width="356" height="424" rx="6" fill="var(--paper-2)" stroke="var(--teal)" stroke-width="1.5" stroke-dasharray="5 4"/>
-            <g fill="var(--paper)">
-              <circle cx="22" cy="70" r="7"/><circle cx="22" cy="110" r="7"/><circle cx="22" cy="150" r="7"/>
-              <circle cx="22" cy="190" r="7"/><circle cx="22" cy="230" r="7"/><circle cx="22" cy="270" r="7"/>
-              <circle cx="22" cy="310" r="7"/><circle cx="22" cy="350" r="7"/><circle cx="22" cy="390" r="7"/>
-            </g>
-            <text x="52" y="58" class="svg-mono svg-eyebrow">VERIFICATION LOG</text>
-            <line x1="52" y1="70" x2="348" y2="70" stroke="var(--line)" stroke-width="1.5"/>
+          <defs>
+            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="3" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
 
-            <text x="52" y="102" class="svg-mono svg-label">Generator Fleet</text>
-            <text x="348" y="102" text-anchor="end" class="svg-mono svg-value">10.03% ✓</text>
+          <rect x="22" y="18" width="356" height="424" rx="6" fill="var(--bg-2)" stroke="var(--line)" stroke-width="1.5"/>
 
-            <text x="52" y="134" class="svg-mono svg-label">Credit Prediction</text>
-            <text x="348" y="134" text-anchor="end" class="svg-mono svg-value">5.2× ✓</text>
-
-            <text x="52" y="166" class="svg-mono svg-label">F1 Compliance RAG</text>
-            <text x="348" y="166" text-anchor="end" class="svg-mono svg-value">89% ✓</text>
-
-            <text x="52" y="198" class="svg-mono svg-label">LendingClub</text>
-            <text x="348" y="198" text-anchor="end" class="svg-mono svg-value">$375,985 ✓</text>
-
-            <line x1="52" y1="222" x2="348" y2="222" stroke="var(--line)" stroke-width="1.5" stroke-dasharray="3 3"/>
-
-            <polyline points="52,320 90,290 128,305 166,255 204,270 242,215 280,235 318,180 348,195"
-                      fill="none" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="348" cy="195" r="4.5" fill="var(--amber)"/>
-
-            <text x="52" y="360" class="svg-mono svg-caption">re-run on real data, not</text>
-            <text x="52" y="378" class="svg-mono svg-caption">just written up</text>
+          <!-- corner brackets -->
+          <g stroke="var(--cyan)" stroke-width="2" fill="none">
+            <path d="M22,42 L22,18 L46,18"/>
+            <path d="M354,18 L378,18 L378,42"/>
+            <path d="M378,418 L378,442 L354,442"/>
+            <path d="M46,442 L22,442 L22,418"/>
           </g>
 
-          <g transform="translate(288 350) rotate(8)">
-            <rect x="-64" y="-26" width="128" height="52" rx="4" fill="var(--paper)" stroke="var(--teal)" stroke-width="2.5"/>
+          <!-- LED status row -->
+          <circle cx="44" cy="46" r="4" fill="var(--cyan)" filter="url(#glow)"/>
+          <circle cx="58" cy="46" r="4" fill="var(--amber)" opacity="0.6"/>
+          <circle cx="72" cy="46" r="4" fill="var(--text-dim)" opacity="0.5"/>
+
+          <text x="52" y="76" class="svg-mono svg-eyebrow">VERIFICATION_LOG.SYS</text>
+          <line x1="52" y1="88" x2="348" y2="88" stroke="var(--line)" stroke-width="1.5"/>
+
+          <text x="52" y="118" class="svg-mono svg-label">Generator Fleet</text>
+          <text x="348" y="118" text-anchor="end" class="svg-mono svg-value">10.03% ✓</text>
+
+          <text x="52" y="148" class="svg-mono svg-label">Credit Prediction</text>
+          <text x="348" y="148" text-anchor="end" class="svg-mono svg-value">5.2× ✓</text>
+
+          <text x="52" y="178" class="svg-mono svg-label">F1 Compliance RAG</text>
+          <text x="348" y="178" text-anchor="end" class="svg-mono svg-value">89% ✓</text>
+
+          <text x="52" y="208" class="svg-mono svg-label">LendingClub</text>
+          <text x="348" y="208" text-anchor="end" class="svg-mono svg-value">$375,985 ✓</text>
+
+          <line x1="52" y1="230" x2="348" y2="230" stroke="var(--line)" stroke-width="1.5" stroke-dasharray="3 4"/>
+
+          <polyline points="52,326 90,298 128,312 166,266 204,280 242,230 280,248 318,198 348,212"
+                    fill="none" stroke="var(--cyan)" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round" filter="url(#glow)"/>
+          <circle cx="348" cy="212" r="4.5" fill="var(--amber)" filter="url(#glow)"/>
+
+          <text x="52" y="366" class="svg-mono svg-caption">re-run on real data, not</text>
+          <text x="52" y="384" class="svg-mono svg-caption">just written up</text>
+
+          <g transform="translate(288 400) rotate(-2)">
+            <rect x="-70" y="-24" width="140" height="48" rx="4" fill="var(--bg-3)" stroke="var(--cyan)" stroke-width="1.5"/>
             <text x="0" y="-2" text-anchor="middle" class="svg-mono svg-stamp-line1">✓ RE-RUN</text>
             <text x="0" y="16" text-anchor="middle" class="svg-mono svg-stamp-line2">VERIFIED</text>
           </g>
@@ -84,7 +102,7 @@
     </div>
   </section>
 
-  <div class="perforation" aria-hidden="true"></div>
+  <div class="scan-divider" aria-hidden="true"></div>
 
   <section class="proof-strip">
     <div class="wrap proof-grid">
@@ -113,7 +131,7 @@
 
   <section id="projects" class="projects">
     <div class="wrap">
-      <h2 class="section-heading"><span class="section-label">01</span> Projects</h2>
+      <h2 class="section-heading"><span class="section-label">[ 01 ]</span> Projects</h2>
 
       <article class="project-card">
         <div class="project-tag tag-optim">Optimisation</div>
@@ -218,7 +236,7 @@
   <section id="about" class="about">
     <div class="wrap about-grid">
       <div>
-        <h2 class="section-heading"><span class="section-label">02</span> About</h2>
+        <h2 class="section-heading"><span class="section-label">[ 02 ]</span> About</h2>
         <p>
           MSc Business Analytics candidate at Warwick Business School, with 14 months of prior
           industry experience delivering machine learning solutions in engineering environments
@@ -245,7 +263,7 @@
 
   <section id="contact" class="contact">
     <div class="wrap">
-      <h2 class="section-heading"><span class="section-label">03</span> Contact</h2>
+      <h2 class="section-heading"><span class="section-label">[ 03 ]</span> Contact</h2>
       <p class="contact-sub">Open to graduate analytics, pricing, and operations-research roles.</p>
       <div class="contact-links">
         <a href="mailto:sanghpriay@icloud.com" class="contact-link">

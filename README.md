@@ -4,7 +4,7 @@ Source for [sanghpriay.github.io](https://sanghpriay.github.io) — a single sta
 covering four analytics projects (optimisation, classical ML, applied GenAI, applied
 statistics + deep learning), each linking to its own GitHub repo.
 
-No build step — plain HTML/CSS, deployed directly via GitHub Pages.
+No build step — plain HTML/CSS, deployed directly via GitHub Pages. Dark, mission-control/telemetry visual theme — see the `:root` custom properties at the top of style.css to adjust.
 
 ## Structure
 
