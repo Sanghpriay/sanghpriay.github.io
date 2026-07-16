@@ -1,6 +1,6 @@
 # Portfolio Site
 
-Source for [sanghpriy.github.io](https://sanghpriy.github.io) — a single static page
+Source for [sanghpriay.github.io](https://sanghpriay.github.io) — a single static page
 covering four analytics projects (optimisation, classical ML, applied GenAI, applied
 statistics + deep learning), each linking to its own GitHub repo.
 
