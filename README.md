@@ -11,7 +11,12 @@ No build step — plain HTML/CSS, deployed directly via GitHub Pages.
 ```
 index.html   — all page content
 style.css    — all styling
+fonts/       — self-hosted IBM Plex Sans/Mono (SIL Open Font License, see fonts/LICENSE.txt)
 ```
+
+Fonts are self-hosted rather than loaded from Google Fonts, so the page renders correctly
+regardless of ad blockers, privacy extensions, or network restrictions that block third-party
+font CDNs.
 
 ## Editing
 

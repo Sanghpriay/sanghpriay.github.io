@@ -1,4 +1,43 @@
 /* ============================================================
+   Fonts (self-hosted — see fonts/LICENSE.txt, SIL OFL 1.1)
+   ============================================================ */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: url('fonts/IBMPlexSans-Regular.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: url('fonts/IBMPlexSans-Medium.woff2') format('woff2');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: url('fonts/IBMPlexSans-SemiBold.woff2') format('woff2');
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: url('fonts/IBMPlexSans-Bold.woff2') format('woff2');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('fonts/IBMPlexMono-Regular.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('fonts/IBMPlexMono-Medium.woff2') format('woff2');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('fonts/IBMPlexMono-SemiBold.woff2') format('woff2');
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+
+/* ============================================================
    Tokens
    ============================================================ */
 :root {
@@ -95,7 +134,52 @@ h1, h2, h3 { font-family: var(--font-sans); font-weight: 700; margin: 0; }
    Hero
    ============================================================ */
 .hero {
-  padding: 96px 0 64px;
+  padding: 88px 0 64px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 620px;
+  height: 620px;
+  background: radial-gradient(circle, rgba(27,110,99,0.07) 0%, rgba(27,110,99,0) 70%);
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.receipt-svg {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  filter: drop-shadow(0 18px 32px rgba(18, 24, 27, 0.09));
+}
+
+.svg-mono { font-family: var(--font-mono); }
+.svg-eyebrow { font-size: 13px; fill: var(--teal-dark); font-weight: 600; letter-spacing: 0.04em; }
+.svg-label { font-size: 13px; fill: var(--ink-soft); }
+.svg-value { font-size: 13px; fill: var(--amber); font-weight: 600; }
+.svg-caption { font-size: 11px; fill: var(--muted); }
+.svg-stamp-line1, .svg-stamp-line2 {
+  font-size: 15px;
+  fill: var(--teal);
+  font-weight: 600;
+  letter-spacing: 0.03em;
 }
 
 .eyebrow {
@@ -452,6 +536,12 @@ h1, h2, h3 { font-family: var(--font-sans); font-weight: 700; margin: 0; }
 /* ============================================================
    Responsive
    ============================================================ */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-visual { order: -1; margin-bottom: 8px; }
+  .receipt-svg { max-width: 300px; }
+}
+
 @media (max-width: 800px) {
   .proof-grid { grid-template-columns: repeat(2, 1fr); row-gap: 32px; }
   .project-card { grid-template-columns: 1fr; gap: 12px; }
